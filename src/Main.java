@@ -1,3 +1,4 @@
+import inmapperwordcount.InMapperWordCountJob;
 import mapreduce.MapReduceJob;
 
 import org.apache.hadoop.util.ToolRunner;
@@ -19,6 +20,10 @@ public class Main {
 		switch (args[0]) {
 		case "part1a":
 			job = new WordCountJob("Word Count Job");
+			break;
+			
+		case "part1b":
+			job = new InMapperWordCountJob("In Mapper Word Count Job");
 			break;
 
 		default:

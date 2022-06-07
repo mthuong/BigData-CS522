@@ -5,6 +5,7 @@ import mapreduce.MapReduceJob;
 import org.apache.hadoop.util.ToolRunner;
 
 import pairfrequencies.PairFrequenciesJob;
+import stripefrequencies.StripeFrequenciesJob;
 import avglogaccess.AvgLogAccessJob;
 import wordcount.WordCountJob;
 
@@ -39,6 +40,10 @@ public class Main {
 			
 		case "part2":
 			job = new PairFrequenciesJob("Pair Frequencies Job");
+			break;
+			
+		case "part3":
+			job = new StripeFrequenciesJob("Stripe Frequencies Job");
 			break;
 
 		default:

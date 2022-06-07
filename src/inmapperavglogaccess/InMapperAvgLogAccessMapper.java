@@ -42,7 +42,7 @@ public class InMapperAvgLogAccessMapper extends
 				pair.setPackages(value);
 				pair.setCount(count);
 
-				map.put(ipAdress, pair);
+//				map.put(ipAdress, pair);
 			} else {
 				Pair pair = new Pair(packageNumber, 1);
 

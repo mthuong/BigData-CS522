@@ -1,8 +1,10 @@
+import inmapperavglogaccess.InMapperAvgLogAccessJob;
 import inmapperwordcount.InMapperWordCountJob;
 import mapreduce.MapReduceJob;
 
 import org.apache.hadoop.util.ToolRunner;
 
+import avglogaccess.AvgLogAccessJob;
 import wordcount.WordCountJob;
 
 public class Main {
@@ -24,6 +26,14 @@ public class Main {
 			
 		case "part1b":
 			job = new InMapperWordCountJob("In Mapper Word Count Job");
+			break;
+			
+		case "part1c":
+			job = new AvgLogAccessJob("Average Log Access Job");
+			break;
+			
+		case "part1d":
+			job = new InMapperAvgLogAccessJob("In Mapper Average Log Access Job");
 			break;
 
 		default:

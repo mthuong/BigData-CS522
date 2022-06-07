@@ -4,6 +4,7 @@ import mapreduce.MapReduceJob;
 
 import org.apache.hadoop.util.ToolRunner;
 
+import pairfrequencies.PairFrequenciesJob;
 import avglogaccess.AvgLogAccessJob;
 import wordcount.WordCountJob;
 
@@ -34,6 +35,10 @@ public class Main {
 			
 		case "part1d":
 			job = new InMapperAvgLogAccessJob("In Mapper Average Log Access Job");
+			break;
+			
+		case "part2":
+			job = new PairFrequenciesJob("Pair Frequencies Job");
 			break;
 
 		default:

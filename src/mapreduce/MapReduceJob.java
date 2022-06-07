@@ -20,7 +20,7 @@ public class MapReduceJob<M extends Mapper<?, ?, ?, ?>, R extends Reducer<?, ?, 
 	private final Job job;
 
 	public MapReduceJob(String jobName, Class<M> mapper, Class<R> reducer,
-			Class<K> key, Class<V> value) throws IOException {
+			Class<K> mapperOuputKey, Class<V> mapperOutputValue) throws IOException {
 		Configuration config = new Configuration();
 		job = Job.getInstance(config, jobName);
 		job.setJarByClass(this.getClass());
@@ -28,11 +28,11 @@ public class MapReduceJob<M extends Mapper<?, ?, ?, ?>, R extends Reducer<?, ?, 
 		job.setMapperClass(mapper);
 		job.setReducerClass(reducer);
 
-		job.setOutputKeyClass(key);
-		job.setOutputValueClass(value);
+		job.setOutputKeyClass(mapperOuputKey);
+		job.setOutputValueClass(mapperOutputValue);
 
-//		job.setInputFormatClass(TextInputFormat.class);
-//		job.setOutputFormatClass(TextOutputFormat.class);
+		job.setInputFormatClass(TextInputFormat.class);
+		job.setOutputFormatClass(TextOutputFormat.class);
 
 		// Set custom partitioner
 		// job.setPartitionerClass(WordCountPartition.class);

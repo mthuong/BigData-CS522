@@ -46,7 +46,7 @@ public class MapReduceJob<M extends Mapper<?, ?, ?, ?>, R extends Reducer<?, ?, 
 		FileOutputFormat.setOutputPath(job, new Path(outputPath));
 
 		Integer numberOfReducer = 1;
-		if (args.length > 4) {
+		if (args.length == 4) {
 			numberOfReducer = Integer.parseInt(args[3]);
 		}
 		job.setNumReduceTasks(numberOfReducer);

@@ -16,7 +16,7 @@ public class Stripe extends MapWritable {
 		}
 		
 		if(keys.size() > 0) {
-			s = s.substring(0, s.length() - 3);
+			s = s.substring(0, s.length() - 2);
 		}
 
 		s = s + " }";

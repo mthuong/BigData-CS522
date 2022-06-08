@@ -26,6 +26,7 @@ public class StripeFrequenciesReducer extends
 				if (HF.containsKey(key)) {
 					IntWritable count = (IntWritable) HF.get(key);
 					count.set(count.get() + fromCount.get());
+					HF.put(key, count);
 				} else {
 					HF.put(key, fromCount);
 				}

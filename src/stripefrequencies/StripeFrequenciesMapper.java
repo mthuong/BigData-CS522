@@ -9,8 +9,6 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 public class StripeFrequenciesMapper extends
 		Mapper<LongWritable, Text, Text, Stripe> {
-	
-	private IntWritable ONE = new IntWritable(1);
 
 	@Override
 	protected void map(
@@ -32,15 +30,15 @@ public class StripeFrequenciesMapper extends
 						value.set(currentValue);
 						H.put(xKey, value);
 					} else {
-						H.put(xKey, ONE);
+						H.put(xKey, new IntWritable(1));
 					}
-					
-					Text uKey = new Text();
-					uKey.set(tokens[i]);
-					context.write(uKey, H);
 					
 					j++;
 				}
+				
+				Text uKey = new Text();
+				uKey.set(tokens[i]);
+				context.write(uKey, H);
 			}
 		}
 	}
